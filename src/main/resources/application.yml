@@ -1,0 +1,21 @@
+#spring的配置
+spring:
+  devtools:
+    restart:
+      additional-paths: src/main/java
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/appointment?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: 105293
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+    mode: html
+    prefix: classpath:/templates/
+  mvc:
+    static-path-pattern: /static/**
+#mybatis配置
+mybatis:
+  type-aliases-package: com.mzl.appointmentsystem.entity
+  mapper-locations: classpath:mapper/*.xml

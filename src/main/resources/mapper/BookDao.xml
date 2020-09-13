@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mzl.appointmentsystem.dao.BookDao">
+
+    <!--一对一，保证列名和属性名一样-->
+    <resultMap id="BaseResultMap" type="com.mzl.appointmentsystem.entity.Book">
+        <result column="bookId" property="bookId"/>
+        <result column="bookName" property="bookName"/>
+        <result column="introd" property="introd"/>
+        <result column="number" property="number"/>
+    </resultMap>
+
+    <!--基本列-->
+    <sql id="Base_Column_List">
+        bookId, bookName, introd, number
+    </sql>
+
+    <!--减少库存-->
+    <update id="reduceNumber" parameterType="int">
+        update book
+        set number = number -1
+        where bookId = #{bookId} and number > 0
+    </update>
+
+    <!--查询图书列表-->
+    <select id="queryAll" resultType="com.mzl.appointmentsystem.entity.Book">
+        select <include refid="Base_Column_List"/>
+        from book
+        <where>
+            <if test="bookName != null and bookName != ''">
+                and bookName like '%${bookName}%'
+            </if>
+        </where>
+        order by bookId asc
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--用id查询图书信息-->
+    <select id="getById" resultType="com.mzl.appointmentsystem.entity.Book">
+        select <include refid="Base_Column_List"></include>
+        from book
+        where bookId = #{bookId}
+    </select>
+
+
+</mapper>
