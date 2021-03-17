@@ -4,11 +4,11 @@
 
 ## 项目简介：
 
-图书馆预约系统面向对象是学校的学生，旨在为学生提供一个图书馆预约借书的平台。在这里，学生可以浏览图书，查询预约记录，进行图书预约等操作。这是我学习 Spring Data Jpa 时的一个简单的练手项目，如果你是spring Boot 或 Spring Data Jpa 的初学者，那么此项目非常适合你。如果喜欢，请随手给个star，谢谢。
+图书馆预约系统面向对象是学校的学生，旨在为学生提供一个图书馆预约借书的平台。在这里，学生可以浏览图书，查询预约记录，进行图书预约等操作。这是我学习 Spring Data Jpa 时的一个简单的练手项目，如果你是Spring Boot 或 Spring Data Jpa 的初学者，那么此项目非常适合你。如果喜欢，请随手给个star，谢谢。
 
 ## 采用技术 ： 
 - 前端：HTML + CSS + JavaScript + Bootstrap + Jquery
-- 后端： Spring Boot + Jpa + Thymeleaf
+- 后端：Spring Boot + Jpa + Thymeleaf
 
 ## 开发环境 ：
 - 工具：IDEA、Navicat、Git
